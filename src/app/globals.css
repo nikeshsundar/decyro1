@@ -26,13 +26,16 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #F5F5F0;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #C0C0B8;
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #9A9A9A;
 }
@@ -48,6 +51,7 @@ body {
   position: relative;
   display: inline-block;
 }
+
 .link-hover::after {
   content: "";
   position: absolute;
@@ -58,17 +62,29 @@ body {
   background-color: currentColor;
   transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
+
 .link-hover:hover::after {
   width: 100%;
 }
 
-/* ---- Marquee ---- */
+/* ---- Marquee (left-right slide) ---- */
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
 .marquee-track {
   display: flex;
   gap: 3rem;
-  animation: marquee 30s linear infinite;
+  animation: marquee-slide 6s ease-in-out infinite alternate;
   width: max-content;
 }
+
 .marquee-track:hover {
   animation-play-state: paused;
 }

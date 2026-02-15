@@ -14,12 +14,15 @@ import {
     DollarSign,
     Users,
     Mail,
+    Shield,
+    Clock,
+    Sparkles,
+    CheckCircle2,
 } from "lucide-react";
 import Button from "@/components/button";
 import Reveal from "@/components/reveal";
 import SectionHeading from "@/components/section-heading";
 import FeatureCard from "@/components/feature-card";
-import TestimonialCard from "@/components/testimonial-card";
 import FaqItem from "@/components/faq-item";
 
 // ─── Data ────────────────────────────────────────────────────
@@ -112,52 +115,62 @@ const features = [
     },
 ];
 
-const testimonials = [
-    {
-        quote:
-            "Decyro helped us acquire 340 qualified leads in the first month — without spending a dollar on ads. The ROI is unreal.",
-        name: "Sarah Chen",
-        role: "CEO, MailFlow",
-    },
-    {
-        quote:
-            "We went from zero organic social presence to 50+ daily conversations mentioning our product. It's like having a 24/7 growth team.",
-        name: "Marcus Rivera",
-        role: "Founder, DevStack",
-    },
-    {
-        quote:
-            "The AI replies are indistinguishable from human responses. Our community engagement has never been this authentic or this effective.",
-        name: "Emily Watson",
-        role: "Head of Growth, CloudSync",
-    },
+const stats = [
+    { value: "10x", label: "Lower CAC than paid ads", icon: DollarSign },
+    { value: "48h", label: "To first qualified lead", icon: Clock },
+    { value: "200+", label: "Founders on waitlist", icon: Users },
+    { value: "95%", label: "Reply quality score", icon: Sparkles },
+];
+
+const trustPoints = [
+    "Built by former growth engineers from Y Combinator startups",
+    "SOC 2 compliance roadmap — your data stays yours",
+    "Every AI reply follows platform community guidelines",
+    "Full transparency — review any reply before it goes live",
+    "No long-term contracts — cancel anytime",
+    "Backed by leading AI and SaaS angel investors",
 ];
 
 const faqs = [
     {
-        question: "How does Decyro find potential customers?",
+        question: "How does Decyro actually find my potential customers?",
         answer:
-            "Decyro's AI agents continuously scan public posts on Reddit and X (Twitter), looking for conversations where users express problems, frustrations, or needs related to your product category. When high-intent discussions are detected, our agents generate contextual, helpful replies that naturally recommend your SaaS as a solution.",
+            "Decyro works in 3 steps: First, you tell us about your product — what it does, who it helps, and what problems it solves. Then, our AI agents scan thousands of conversations on Reddit and X in real time, looking for people who are actively discussing problems your product solves. For example, if you sell an email tool, Decyro finds posts like 'I'm drowning in inbox chaos, any recommendations?' Finally, it generates a genuinely helpful reply that addresses their pain point and naturally mentions your product as a solution.",
     },
     {
-        question: "Is this spam or against platform rules?",
+        question: "Is this spam? Won't my brand get flagged?",
         answer:
-            "Absolutely not. Decyro generates genuinely helpful responses that address real user problems. Our replies are contextual, valuable, and follow each platform's community guidelines. Think of it as automated community engagement, not spam.",
+            "This is the opposite of spam. Spam is irrelevant, mass-sent, and annoying. Decyro only replies to people who are actively asking for help or recommendations — and the replies are genuinely helpful. Each response is unique, contextual, and directly addresses the user's specific problem. Think of it like having a knowledgeable friend who happens to recommend your product when someone needs exactly what you offer. We also follow every platform's community guidelines strictly, and you can review every reply before it's posted.",
     },
     {
-        question: "What platforms does Decyro support?",
+        question: "What platforms does Decyro monitor?",
         answer:
-            "Currently, Decyro monitors Reddit and X (Twitter). We're actively developing support for LinkedIn, Hacker News, Product Hunt, and other platforms where SaaS buying conversations happen.",
+            "Right now, Decyro monitors Reddit (all subreddits relevant to your niche) and X (Twitter). These are the two highest-intent platforms where people openly discuss their problems, ask for tool recommendations, and share frustrations with existing solutions. We're building support for LinkedIn, Hacker News, Product Hunt, Quora, and niche community forums next — launching Q3 2026.",
     },
     {
-        question: "How long until I see results?",
+        question: "How is this different from social listening tools like Mention or Brand24?",
         answer:
-            "Most customers see their first qualified leads within 48 hours of setup. The AI needs a brief training period to understand your product and ideal customer profile, after which it starts engaging autonomously.",
+            "Social listening tools tell you that a conversation happened. Decyro actually participates in it. Traditional tools give you alerts and dashboards — you still have to manually read each post, write a reply, and post it. Decyro does the entire workflow autonomously: it finds high-intent posts, understands the context, writes a helpful and natural response, and positions your product as the solution. It's the difference between a radar and an autopilot.",
     },
     {
-        question: "Can I control what the AI says?",
+        question: "How long until I see actual results?",
         answer:
-            "Yes. You set the tone, messaging guidelines, and key value propositions. You can review and approve replies before they're posted, or let the AI operate fully autonomously once you're comfortable with its output quality.",
+            "Most users see their first qualified leads within 48 hours. Here's what the timeline looks like: Day 1 — you set up your product profile and configure your keywords. Day 1-2 — Decyro starts scanning and identifies high-intent conversations. Day 2-3 — first AI replies go live and users start clicking through to your product. By week 2, you'll have clear data on which conversations convert best and the AI will be continuously improving its targeting.",
+    },
+    {
+        question: "Can I control what the AI says about my product?",
+        answer:
+            "100%. You have full control over the AI's voice and messaging. You set the tone (professional, casual, technical), define key talking points, specify what to highlight and what to avoid, and set messaging guidelines. You can also choose between two modes: Review Mode (approve every reply before it posts) or Autonomous Mode (AI posts automatically based on your guidelines). Most founders start with Review Mode and switch to Autonomous after seeing 20-30 replies they're happy with.",
+    },
+    {
+        question: "What kind of products work best with Decyro?",
+        answer:
+            "Decyro works best for B2B SaaS products, developer tools, productivity apps, and any software where people actively discuss problems online. If your target audience uses Reddit, X, or online communities to ask questions and share frustrations, Decyro will find them. Examples: project management tools, email clients, CRM software, design tools, DevOps tools, AI writing assistants, analytics platforms, and more. If people Google your product category, they're probably talking about it on social media too.",
+    },
+    {
+        question: "What does it cost? Is there a free plan?",
+        answer:
+            "Yes! We have a free Starter plan that lets you track 1 keyword with 50 scans per day — perfect for validating the concept with your product. The Pro plan ($29/month) gives you 5 keywords, unlimited scans, and AI-generated replies. The Growth plan ($79/month) unlocks fully autonomous agents, unlimited keywords, custom reply guidelines, advanced analytics, and API access. No long-term contracts on any plan — you can upgrade, downgrade, or cancel anytime.",
     },
 ];
 
@@ -222,7 +235,7 @@ export default function HomePage() {
 
             {/* ═══ MARQUEE ═══ */}
             <section className="py-8 border-y border-border overflow-hidden">
-                <div className="marquee-track">
+                <div className="marquee-track marquee-reverse">
                     {[...marqueeItems, ...marqueeItems].map((item, i) => (
                         <span
                             key={i}
@@ -315,17 +328,68 @@ export default function HomePage() {
             </section>
 
             {/* ═══ SOCIAL PROOF ═══ */}
-            <section className="section-padding py-32 bg-card-bg/50">
+            <section className="section-padding py-32 bg-fg text-bg">
                 <div className="max-w-7xl mx-auto">
-                    <SectionHeading
-                        label="What People Say"
-                        title="Trusted by Founders Who Refuse to Overspend on Acquisition."
-                    />
-                    <div className="grid md:grid-cols-3 gap-6 mt-16">
-                        {testimonials.map((t, i) => (
-                            <TestimonialCard key={i} index={i} {...t} />
+                    <Reveal>
+                        <span className="text-xs uppercase tracking-label text-bg/40 font-medium block mb-4">
+                            Why Trust Decyro
+                        </span>
+                    </Reveal>
+                    <Reveal delay={0.1}>
+                        <h2 className="font-heading font-bold text-section leading-[1.1] max-w-4xl mb-16">
+                            Built for Founders Who Measure Results,
+                            <span className="text-accent-light"> Not Vanity Metrics.</span>
+                        </h2>
+                    </Reveal>
+
+                    {/* Stats Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+                        {stats.map((stat, i) => (
+                            <Reveal key={i} delay={i * 0.1}>
+                                <div className="text-center p-6 rounded-2xl border border-bg/10 bg-bg/5 hover:bg-bg/10 transition-colors duration-300">
+                                    <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4">
+                                        <stat.icon size={20} className="text-accent-light" />
+                                    </div>
+                                    <p className="font-heading font-bold text-4xl md:text-5xl text-bg mb-2">
+                                        {stat.value}
+                                    </p>
+                                    <p className="text-bg/50 text-sm font-body">{stat.label}</p>
+                                </div>
+                            </Reveal>
                         ))}
                     </div>
+
+                    {/* Trust Points */}
+                    <Reveal delay={0.2}>
+                        <div className="border-t border-bg/10 pt-12">
+                            <p className="text-xs uppercase tracking-label text-bg/40 font-medium mb-8">
+                                Our Commitments
+                            </p>
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {trustPoints.map((point, i) => (
+                                    <div key={i} className="flex items-start gap-3 p-4 rounded-xl hover:bg-bg/5 transition-colors duration-200">
+                                        <CheckCircle2 size={18} className="text-accent-light flex-shrink-0 mt-0.5" />
+                                        <p className="text-bg/70 text-sm font-body leading-relaxed">
+                                            {point}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </Reveal>
+
+                    {/* CTA within social proof */}
+                    <Reveal delay={0.3}>
+                        <div className="mt-16 text-center">
+                            <p className="text-bg/50 text-sm font-body mb-6">
+                                Join 200+ founders already on the waitlist
+                            </p>
+                            <Button href="/waitlist" variant="primary">
+                                Get Early Access
+                                <ArrowRight size={16} className="ml-2" />
+                            </Button>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
