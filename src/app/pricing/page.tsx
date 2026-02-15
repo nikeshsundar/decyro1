@@ -21,7 +21,7 @@ const plans = [
     },
     {
         name: "Pro",
-        price: "$29",
+        price: "$xx",
         period: "month",
         description: "For founders ready to start acquiring customers consistently.",
         features: [
@@ -37,7 +37,7 @@ const plans = [
     },
     {
         name: "Growth",
-        price: "$79",
+        price: "$xx",
         period: "month",
         description: "Full autonomous operation for scaling customer acquisition.",
         features: [
@@ -73,7 +73,7 @@ const pricingFaqs = [
     {
         question: "Do you offer annual pricing?",
         answer:
-            "Yes! Annual plans save you 20%. Pro is $278/year ($23/month) and Growth is $758/year ($63/month).",
+            "Yes! Annual plans save you 20%. Contact us for annual pricing details.",
     },
 ];
 

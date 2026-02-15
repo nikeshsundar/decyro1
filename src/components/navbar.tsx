@@ -11,7 +11,7 @@ const navLinks = [
     { label: "How It Works", href: "/how-it-works" },
     { label: "Use Cases", href: "/use-cases" },
     { label: "Pricing", href: "/pricing" },
-    { label: "About", href: "/about" },
+    { label: "About Us", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -42,8 +42,8 @@ export default function Navbar() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                        ? "bg-bg/80 backdrop-blur-xl border-b border-border/50 py-4"
-                        : "bg-transparent py-6"
+                    ? "bg-bg/80 backdrop-blur-xl border-b border-border/50 py-4"
+                    : "bg-transparent py-6"
                     }`}
             >
                 <div className="section-padding flex items-center justify-between">

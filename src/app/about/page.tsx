@@ -160,6 +160,69 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Co-Founders */}
+            <section className="section-padding py-24 bg-fg text-bg">
+                <div className="max-w-3xl mx-auto text-center">
+                    <Reveal>
+                        <span className="text-xs uppercase tracking-label text-bg/40 font-medium block mb-4">
+                            Built By
+                        </span>
+                    </Reveal>
+                    <Reveal delay={0.1}>
+                        <h2 className="font-heading font-bold text-3xl md:text-4xl text-bg mb-4">
+                            Meet the Co-Founders
+                        </h2>
+                    </Reveal>
+                    <Reveal delay={0.15}>
+                        <p className="text-bg/50 font-body mb-12 max-w-lg mx-auto">
+                            For the latest updates, product drops, and behind-the-scenes — follow us on X.
+                        </p>
+                    </Reveal>
+
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <Reveal delay={0.2}>
+                            <a
+                                href="https://x.com/Nithishbuilds"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center gap-4 px-6 py-4 rounded-2xl border border-bg/10 bg-bg/5 hover:bg-bg/10 transition-all duration-300 min-w-[240px]"
+                            >
+                                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
+                                    <span className="font-heading font-bold text-lg text-accent-light">N</span>
+                                </div>
+                                <div className="text-left">
+                                    <p className="font-heading font-semibold text-bg">Nithish</p>
+                                    <p className="text-bg/40 text-sm font-body flex items-center gap-1">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                                        @Nithishbuilds
+                                    </p>
+                                </div>
+                            </a>
+                        </Reveal>
+
+                        <Reveal delay={0.3}>
+                            <a
+                                href="https://x.com/nikeshsundarx"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex items-center gap-4 px-6 py-4 rounded-2xl border border-bg/10 bg-bg/5 hover:bg-bg/10 transition-all duration-300 min-w-[240px]"
+                            >
+                                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
+                                    <span className="font-heading font-bold text-lg text-accent-light">N</span>
+                                </div>
+                                <div className="text-left">
+                                    <p className="font-heading font-semibold text-bg">Nikesh</p>
+                                    <p className="text-bg/40 text-sm font-body flex items-center gap-1">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>
+                                        @nikeshsundarx
+                                    </p>
+                                </div>
+                            </a>
+                        </Reveal>
+                    </div>
+                </div>
+            </section>
+
             {/* CTA */}
             <section className="section-padding py-32 max-w-4xl mx-auto text-center">
                 <Reveal>

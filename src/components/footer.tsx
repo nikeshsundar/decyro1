@@ -16,10 +16,9 @@ const footerLinks = {
         { label: "Privacy Policy", href: "/privacy" },
         { label: "Terms of Service", href: "/terms" },
     ],
-    Social: [
-        { label: "X (Twitter)", href: "https://twitter.com" },
-        { label: "LinkedIn", href: "https://linkedin.com" },
-        { label: "GitHub", href: "https://github.com" },
+    "Follow Us": [
+        { label: "Nithish on X", href: "https://x.com/Nithishbuilds" },
+        { label: "Nikesh on X", href: "https://x.com/nikeshsundarx" },
     ],
 };
 
