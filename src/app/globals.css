@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Base Resets ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F5F5F0;
+  color: #0A0A0A;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C0C0B8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A9A9A;
+}
+
+/* ---- Selection ---- */
+::selection {
+  background-color: #6C3BF5;
+  color: #fff;
+}
+
+/* ---- Link underline animation ---- */
+.link-hover {
+  position: relative;
+  display: inline-block;
+}
+.link-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: currentColor;
+  transition: width 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* ---- Marquee ---- */
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  animation: marquee 30s linear infinite;
+  width: max-content;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ---- Gradient orb ---- */
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ---- Section padding ---- */
+.section-padding {
+  @apply px-6 md:px-12 lg:px-20 xl:px-32;
+}
+
+/* ---- Label style (Collins uppercase labels) ---- */
+.label {
+  @apply text-xs uppercase tracking-label font-body text-muted font-medium;
+}
+
+/* ---- Glassmorphism card ---- */
+.glass-card {
+  background: rgba(245, 245, 240, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(224, 224, 218, 0.8);
+}
