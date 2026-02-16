@@ -17,13 +17,17 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-    title: "Decyro — Turn Social Media Conversations Into Customers",
+    title: "Decyro — Find People Asking for Your Product & Reply Automatically",
     description:
-        "Decyro's autonomous AI agents find high-intent prospects on Reddit & X, generate contextual replies, and recommend your SaaS as the perfect solution.",
+        "Decyro scans Reddit and X for people with problems your SaaS solves, then generates helpful replies that recommend your product.",
+    icons: {
+        icon: "/logo.png",
+        apple: "/logo.png",
+    },
     openGraph: {
-        title: "Decyro — Turn Social Media Conversations Into Customers",
+        title: "Decyro — Find People Asking for Your Product & Reply Automatically",
         description:
-            "Autonomous AI agents that convert social media conversations into customer acquisition opportunities.",
+            "Decyro scans Reddit and X for high-intent prospects and generates contextual replies that recommend your SaaS.",
         type: "website",
     },
 };

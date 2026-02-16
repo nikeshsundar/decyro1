@@ -179,56 +179,70 @@ export default function HomePage() {
     return (
         <>
             {/* ═══ HERO ═══ */}
-            <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+            <section className="relative min-h-screen flex items-center overflow-hidden">
                 {/* Gradient orbs */}
                 <div className="gradient-orb w-[500px] h-[500px] bg-accent top-[-100px] right-[-100px] animate-float" />
                 <div className="gradient-orb w-[400px] h-[400px] bg-purple-400 bottom-[-50px] left-[-100px] animate-float" style={{ animationDelay: "3s" }} />
 
-                <div className="section-padding w-full max-w-7xl mx-auto pt-32 pb-20 relative z-10">
+                <div className="section-padding w-full max-w-7xl mx-auto pt-28 pb-12 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
                     >
-                        <span className="label block mb-6">AI-Powered Customer Acquisition</span>
+                        <span className="label block mb-4">AI Customer Acquisition for SaaS</span>
                     </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 40 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="font-heading font-bold text-hero leading-[1.05] max-w-5xl mb-8"
+                        className="font-heading font-bold text-[clamp(2.5rem,6vw,5.2rem)] leading-[1.08] max-w-5xl mb-6"
                     >
-                        Turn Social Media
-                        <br />
-                        Conversations Into
-                        <br />
-                        <span className="text-accent">Customers</span> — Automatically
+                        Find People Asking for Your Product on Reddit & X — <span className="text-accent">Reply Automatically</span>
                     </motion.h1>
 
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="text-muted text-lg md:text-xl max-w-2xl mb-10 leading-relaxed font-body"
+                        className="text-muted text-base md:text-lg max-w-2xl mb-8 leading-relaxed font-body"
                     >
-                        Decyro&apos;s autonomous AI agents find high‑intent prospects, generate
-                        contextual replies, and recommend your SaaS as the perfect solution.
+                        Decyro scans Reddit and X for people with problems your SaaS solves,
+                        then generates helpful replies that recommend your product — so you get
+                        qualified leads without ads or cold outreach.
                     </motion.p>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="flex flex-wrap gap-4"
+                        className="max-w-xl"
                     >
-                        <Button href="/waitlist" variant="primary">
-                            Join Waitlist
-                            <ArrowRight size={16} className="ml-2" />
-                        </Button>
-                        <Button href="/how-it-works" variant="secondary">
-                            See How It Works
-                        </Button>
+                        <form
+                            onSubmit={(e) => { e.preventDefault(); window.location.href = "/waitlist"; }}
+                            className="flex flex-col sm:flex-row gap-3 mb-3"
+                        >
+                            <input
+                                type="url"
+                                placeholder="Enter your product URL (e.g. yourapp.com)"
+                                className="flex-1 px-4 py-3.5 rounded-xl border border-border bg-bg text-fg font-body text-sm placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
+                            />
+                            <button
+                                type="submit"
+                                className="px-6 py-3.5 rounded-xl bg-fg text-bg font-heading font-semibold text-sm tracking-wide hover:bg-fg/90 transition-colors duration-200 whitespace-nowrap flex items-center gap-2"
+                            >
+                                Start Finding Leads
+                                <ArrowRight size={16} />
+                            </button>
+                        </form>
+                        <div className="flex items-center gap-4">
+                            <p className="text-muted-light text-xs font-body">Free to start · No credit card required</p>
+                            <span className="text-muted-light text-xs">·</span>
+                            <a href="/how-it-works" className="text-accent text-xs font-medium hover:underline font-body">
+                                See how it works →
+                            </a>
+                        </div>
                     </motion.div>
                 </div>
             </section>
