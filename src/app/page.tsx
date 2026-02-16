@@ -217,32 +217,12 @@ export default function HomePage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-                        className="max-w-xl"
+                        className="flex flex-wrap items-center gap-4"
                     >
-                        <form
-                            onSubmit={(e) => { e.preventDefault(); window.location.href = "/waitlist"; }}
-                            className="flex flex-col sm:flex-row gap-3 mb-3"
-                        >
-                            <input
-                                type="url"
-                                placeholder="Enter your product URL (e.g. yourapp.com)"
-                                className="flex-1 px-4 py-3.5 rounded-xl border border-border bg-bg text-fg font-body text-sm placeholder:text-muted-light focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200"
-                            />
-                            <button
-                                type="submit"
-                                className="px-6 py-3.5 rounded-xl bg-fg text-bg font-heading font-semibold text-sm tracking-wide hover:bg-fg/90 transition-colors duration-200 whitespace-nowrap flex items-center gap-2"
-                            >
-                                Start Finding Leads
-                                <ArrowRight size={16} />
-                            </button>
-                        </form>
-                        <div className="flex items-center gap-4">
-                            <p className="text-muted-light text-xs font-body">Free to start · No credit card required</p>
-                            <span className="text-muted-light text-xs">·</span>
-                            <a href="/how-it-works" className="text-accent text-xs font-medium hover:underline font-body">
-                                See how it works →
-                            </a>
-                        </div>
+                        <Button href="/how-it-works" variant="primary">
+                            See How It Works
+                            <ArrowRight size={16} className="ml-2" />
+                        </Button>
                     </motion.div>
                 </div>
             </section>
@@ -287,10 +267,19 @@ export default function HomePage() {
                         </Reveal>
                     ))}
                 </div>
+                <Reveal delay={0.4}>
+                    <div className="mt-12 text-center">
+                        <p className="text-muted text-sm font-body mb-4">Sound familiar? Here's how Decyro solves it.</p>
+                        <Button href="#solution" variant="secondary">
+                            See the Solution
+                            <ArrowRight size={16} className="ml-2" />
+                        </Button>
+                    </div>
+                </Reveal>
             </section>
 
             {/* ═══ SOLUTION ═══ */}
-            <section className="section-padding py-32 bg-fg text-bg">
+            <section id="solution" className="section-padding py-32 bg-fg text-bg">
                 <div className="max-w-7xl mx-auto">
                     <Reveal>
                         <span className="text-xs uppercase tracking-label text-bg/40 font-medium block mb-4">
@@ -324,6 +313,14 @@ export default function HomePage() {
                             </Reveal>
                         ))}
                     </div>
+                    <Reveal delay={0.5}>
+                        <div className="mt-16 text-center">
+                            <Button href="/how-it-works" variant="secondary">
+                                <span className="text-bg">Explore Full Breakdown</span>
+                                <ArrowRight size={16} className="ml-2 text-bg" />
+                            </Button>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
@@ -339,6 +336,19 @@ export default function HomePage() {
                         <FeatureCard key={i} index={i} {...feature} />
                     ))}
                 </div>
+                <Reveal delay={0.4}>
+                    <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Button href="/pricing" variant="secondary">
+                            View Pricing Plans
+                            <ArrowRight size={16} className="ml-2" />
+                        </Button>
+                        <span className="text-muted text-sm font-body">or</span>
+                        <Button href="/use-cases" variant="secondary">
+                            See Use Cases
+                            <ArrowRight size={16} className="ml-2" />
+                        </Button>
+                    </div>
+                </Reveal>
             </section>
 
             {/* ═══ SOCIAL PROOF ═══ */}
@@ -419,6 +429,15 @@ export default function HomePage() {
                         <FaqItem key={i} index={i} {...faq} />
                     ))}
                 </div>
+                <Reveal delay={0.3}>
+                    <div className="mt-12 text-center">
+                        <p className="text-muted text-sm font-body mb-4">Still have questions?</p>
+                        <Button href="/contact" variant="secondary">
+                            Contact Us
+                            <ArrowRight size={16} className="ml-2" />
+                        </Button>
+                    </div>
+                </Reveal>
             </section>
 
             {/* ═══ FINAL CTA ═══ */}
